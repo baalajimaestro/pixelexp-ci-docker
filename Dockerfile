@@ -13,6 +13,5 @@ RUN git config --global user.name "Henrique Silva"
 
 RUN mkdir /app
 WORKDIR /app
-RUN npm install glob
 
 CMD ["bash"]
