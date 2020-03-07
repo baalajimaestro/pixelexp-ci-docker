@@ -16,7 +16,7 @@ RUN git config --global user.name "Henrique Silva"
 RUN mkdir /app
 WORKDIR /app
 
-RUN curl -o Cargo.toml https://raw.githubusercontent.com/PixelExperience/official_devices/master/Cargo.toml
+RUN curl -sLo Cargo.toml https://raw.githubusercontent.com/PixelExperience/infra_resources/master/ci-linter/Cargo.toml
 
 RUN cargo update
 
