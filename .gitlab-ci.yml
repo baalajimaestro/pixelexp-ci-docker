@@ -1,0 +1,11 @@
+docker-build:
+  image: docker:latest
+  stage: build
+  services:
+    - docker:dind
+  before_script:
+    - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+    - docker pull baalajimaestro/pixelexp-ci:latest
+  script:
+    - docker build . -t baalajimaestro/pixelexp-ci:latest
+    - docker push baalajimaestro/pixelexp-ci
