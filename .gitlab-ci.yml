@@ -4,7 +4,7 @@ docker-build:
   services:
     - docker:dind
   before_script:
-    - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
     - docker pull baalajimaestro/pixelexp-ci:latest
   script:
     - docker build . -t baalajimaestro/pixelexp-ci:latest
